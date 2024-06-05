@@ -2,6 +2,7 @@ export default {
   content: ["./index.html", "./src/**/*.jsx"],
   theme: {
     colors: {
+      transparent: "rgba(0, 0, 0, 0)",
       white: "#FFFFFF",
       red: "#D73C3C",
       grey: {
@@ -48,7 +49,7 @@ export default {
     },
     spacing: {
       100: "0.5rem",
-      150: "0.75",
+      150: "0.75rem",
       200: "1rem",
       300: "1.5rem",
       400: "2rem",
