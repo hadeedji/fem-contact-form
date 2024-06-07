@@ -1,38 +1,31 @@
+import { useState } from "react";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import * as Checkbox from "@radix-ui/react-checkbox";
 
 import icon_checkbox_checked from "../assets/icon-checkbox-checked.svg";
 import icon_checkbox_unchecked from "../assets/icon-checkbox-unchecked.svg";
-import { useState } from "react";
+
+import { Button } from "./components/button";
+import { Input } from "./components/input";
 
 const InputField = ({ label, type = "text", required = false, ...props }) => {
-  const inputProps = {
-    className:
-      "block w-full cursor-pointer rounded-lg border-[1px] border-grey-500 px-300 py-150 text-body-md focus:border-green-600 group-hover:border-green-600",
-    name: label.toLowerCase().replace(/ /g, "_"),
-    required: required,
-    autoComplete: "off",
-    ...props,
-  };
-
   return (
     <label className="group block cursor-pointer space-y-100">
-      <div className="space-x-100">
-        <span className="text-body-sm text-grey-900 group-focus-within:text-green-600">
-          {label}
-        </span>
-        {required && <span className="text-body-sm text-green-600">*</span>}
+      <div className="space-x-100 text-body-sm text-grey-900 group-focus-within:text-green-600">
+        <span>{label}</span>
+        {required && <span className="text-green-600">*</span>}
       </div>
-      {type == "textarea" ? (
-        <textarea {...inputProps} />
-      ) : (
-        <input type={type} {...inputProps} />
-      )}
+      <Input
+        name={label.toLowerCase().replace(/ /g, "_")}
+        type={type}
+        required={required}
+        {...props}
+      />
     </label>
   );
 };
 
-export default () => {
+export default function App() {
   const [checkbox, setCheckbox] = useState(false);
 
   return (
@@ -90,19 +83,17 @@ export default () => {
               />
             </Checkbox.Root>
             <label
-              className="mx-200 cursor-pointer text-body-sm text-grey-900"
+              className="mx-200 cursor-pointer space-x-100 text-body-sm text-grey-900"
               htmlFor="c1"
             >
-              I consent to being contacted by the team{" "}
+              <span>I consent to being contacted by the team</span>
               <span className="text-green-600">*</span>
             </label>
           </div>
 
-          <button className="w-full rounded-lg bg-green-600 py-200 text-center text-body-md font-bold text-white hover:bg-grey-900">
-            Submit
-          </button>
+          <Button>Submit</Button>
         </form>
       </div>
     </div>
   );
-};
+}
