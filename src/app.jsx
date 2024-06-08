@@ -50,7 +50,7 @@ export default function App() {
   const [toastOpen, setToastOpen] = useState(false);
 
   return (
-    <div className="min-h-dvh bg-green-200 px-200 py-400">
+    <div className="flex min-h-dvh flex-col items-center justify-center bg-green-200 px-200 py-400">
       <Toast.Provider>
         <Toast.Viewport className="left-0 top-0 fixed flex w-full justify-center p-300" />
         <div className="rounded-2xl bg-white p-300 text-grey-900">
@@ -63,18 +63,20 @@ export default function App() {
             <h1 className="text-heading">Contact Us</h1>
 
             <div className="mt-400 space-y-300">
-              <InputField
-                register={register}
-                errors={errors}
-                label="First Name"
-                required
-              />
-              <InputField
-                register={register}
-                errors={errors}
-                label="Last Name"
-                required
-              />
+              <div className="flex flex-col gap-300 sm:flex-row sm:gap-200">
+                <InputField
+                  register={register}
+                  errors={errors}
+                  label="First Name"
+                  required
+                />
+                <InputField
+                  register={register}
+                  errors={errors}
+                  label="Last Name"
+                  required
+                />
+              </div>
               <InputField
                 register={register}
                 errors={errors}
@@ -98,7 +100,7 @@ export default function App() {
                     fieldState: { invalid },
                   }) => (
                     <RadioGroup.Root
-                      className="space-y-200"
+                      className="flex flex-col gap-200 sm:flex-row"
                       value={value}
                       onValueChange={onChange}
                     >
@@ -133,7 +135,7 @@ export default function App() {
                 errors={errors}
                 label="Message"
                 type="textarea"
-                rows="4"
+                rows="3"
                 required
               />
             </div>
