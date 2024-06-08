@@ -4,8 +4,8 @@ import * as Toast from "@radix-ui/react-toast";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
-import icon_checkbox_checked from "../assets/icon-checkbox-checked.svg";
-import icon_checkbox_unchecked from "../assets/icon-checkbox-unchecked.svg";
+import icon_checkbox_checked from "/assets/icon-checkbox-checked.svg";
+import icon_checkbox_unchecked from "/assets/icon-checkbox-unchecked.svg";
 import icon_check from "../assets/check.svg";
 
 import { Button } from "./components/button";
@@ -153,7 +153,7 @@ export default function App() {
                       onCheckedChange={onChange}
                       className="size-300 flex-shrink-0"
                       style={{
-                        backgroundImage: `url('${icon_checkbox_unchecked}')`,
+                        backgroundImage: `url("${icon_checkbox_unchecked}")`,
                       }}
                     >
                       <Checkbox.Indicator>
