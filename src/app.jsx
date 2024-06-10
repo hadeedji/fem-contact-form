@@ -53,7 +53,7 @@ export default function App() {
     <div className="flex min-h-dvh flex-col items-center justify-center bg-green-200 px-200 py-400">
       <Toast.Provider>
         <Toast.Viewport className="fixed left-0 top-0 flex w-full justify-center p-300" />
-        <div className="w-full max-w-3xl rounded-2xl bg-white p-300 text-grey-900">
+        <div className="w-full max-w-3xl rounded-2xl bg-white p-300 text-grey-900 sm:p-500">
           <form
             onSubmit={handleSubmit((data) => {
               console.log(data);
