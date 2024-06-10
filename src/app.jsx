@@ -23,7 +23,7 @@ const InputField = ({
   const error = errors[_label]?.type == "required";
 
   return (
-    <label className="group block cursor-pointer space-y-100 text-body-sm">
+    <label className="group block flex-1 cursor-pointer space-y-100 text-body-sm">
       <div className="space-x-100 text-grey-900 group-focus-within:text-green-600">
         <span>{label}</span>
         {required && <span className="text-green-600">*</span>}
@@ -53,7 +53,7 @@ export default function App() {
     <div className="flex min-h-dvh flex-col items-center justify-center bg-green-200 px-200 py-400">
       <Toast.Provider>
         <Toast.Viewport className="fixed left-0 top-0 flex w-full justify-center p-300" />
-        <div className="rounded-2xl bg-white p-300 text-grey-900">
+        <div className="w-full max-w-3xl rounded-2xl bg-white p-300 text-grey-900">
           <form
             onSubmit={handleSubmit((data) => {
               console.log(data);
