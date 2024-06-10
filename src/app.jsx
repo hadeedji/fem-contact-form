@@ -52,7 +52,7 @@ export default function App() {
   return (
     <div className="flex min-h-dvh flex-col items-center justify-center bg-green-200 px-200 py-400">
       <Toast.Provider>
-        <Toast.Viewport className="left-0 top-0 fixed flex w-full justify-center p-300" />
+        <Toast.Viewport className="fixed left-0 top-0 flex w-full justify-center p-300" />
         <div className="rounded-2xl bg-white p-300 text-grey-900">
           <form
             onSubmit={handleSubmit((data) => {
@@ -100,26 +100,28 @@ export default function App() {
                     fieldState: { invalid },
                   }) => (
                     <RadioGroup.Root
-                      className="flex flex-col gap-200 sm:flex-row"
+                      className="space-y-200"
                       value={value}
                       onValueChange={onChange}
                     >
-                      {["General Enquiry", "Support Request"].map((label) => (
-                        <RadioGroup.Item
-                          className="group w-full rounded-lg border-[1px] border-grey-500 px-300 py-150 text-left hover:border-green-600 data-[state='checked']:border-green-600 data-[state='checked']:bg-green-200"
-                          value={label.toLowerCase().replace(/ /g, "_")}
-                          key={label}
-                        >
-                          <label className="flex cursor-pointer items-center justify-start gap-150 hover:text-green-600 group-data-[state='checked']:text-green-600">
-                            <span className="relative size-300 rounded-full border-2 border-solid border-grey-500 bg-transparent group-data-[state='checked']:border-green-600">
-                              <span className="absolute left-1/2 top-1/2 size-150 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-transparent group-data-[state='checked']:bg-green-600"></span>
-                            </span>
-                            <span className="text-body-md text-grey-900 group-hover:text-green-600 group-data-[state='checked']:text-green-600">
-                              {label}
-                            </span>
-                          </label>
-                        </RadioGroup.Item>
-                      ))}
+                      <div className="flex flex-col gap-200 sm:flex-row">
+                        {["General Enquiry", "Support Request"].map((label) => (
+                          <RadioGroup.Item
+                            className="group w-full rounded-lg border-[1px] border-grey-500 px-300 py-150 text-left hover:border-green-600 data-[state='checked']:border-green-600 data-[state='checked']:bg-green-200"
+                            value={label.toLowerCase().replace(/ /g, "_")}
+                            key={label}
+                          >
+                            <label className="flex cursor-pointer items-center justify-start gap-150 hover:text-green-600 group-data-[state='checked']:text-green-600">
+                              <span className="relative size-300 rounded-full border-2 border-solid border-grey-500 bg-transparent group-data-[state='checked']:border-green-600">
+                                <span className="absolute left-1/2 top-1/2 size-150 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-transparent group-data-[state='checked']:bg-green-600"></span>
+                              </span>
+                              <span className="text-body-md text-grey-900 group-hover:text-green-600 group-data-[state='checked']:text-green-600">
+                                {label}
+                              </span>
+                            </label>
+                          </RadioGroup.Item>
+                        ))}
+                      </div>
                       {invalid && (
                         <p className="text-body-sm text-red">
                           Please select a query type
