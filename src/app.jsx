@@ -146,6 +146,7 @@ export default function App() {
               control={control}
               name="consent_given"
               rules={{ validate: (value) => value }}
+              defaultValue={false}
               render={({
                 field: { onChange, value },
                 fieldState: { invalid },
