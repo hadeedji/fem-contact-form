@@ -112,7 +112,7 @@ export default function App() {
                             key={label}
                           >
                             <label className="flex cursor-pointer items-center justify-start gap-150 hover:text-green-600 group-data-[state='checked']:text-green-600">
-                              <span className="relative size-300 rounded-full border-2 border-solid border-grey-500 bg-transparent group-data-[state='checked']:border-green-600">
+                              <span className="relative size-300 rounded-full border-2 border-solid border-grey-500/50 bg-transparent group-data-[state='checked']:border-green-600">
                                 <span className="absolute left-1/2 top-1/2 size-150 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-transparent group-data-[state='checked']:bg-green-600"></span>
                               </span>
                               <span className="text-body-md text-grey-900 group-hover:text-green-600 group-data-[state='checked']:text-green-600">
